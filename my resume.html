@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鄒蕙全 - 履歷</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #007bff;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .info {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #007bff;
+            border-left: 5px solid #007bff;
+            padding-left: 15px;
+            font-size: 1.5em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        li:before {
+            content: "▶";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.1em;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .print-mode {
+            background: white !important;
+            box-shadow: none;
+            padding: 20px;
+        }
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; padding: 20px; }
+            button { display: none; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            .contact { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="resume">
+        <header>
+            <h1>鄒蕙全</h1>
+            <p class="info">學號：113018081</p>
+            <p class="info">亞洲大學聽語系三年級</p>
+            <p class="info">語言治療實習生 / 吞嚥障礙研究助理</p>
+            <p class="info">台中市，台灣</p>
+            <div class="contact">
+                <span>📧 zouhuiquan@email.com</span>
+                <span>📱 0912-345-678</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>專業概述</h2>
+            <p>亞洲大學聽語系三年級學生，對語言治療與吞嚥障礙（dysphagia）領域充滿熱情。具備口腔運動評估、肺功能測試（spirometry）基礎知識與實習經驗，擅長台語衛教講稿製作、文獻閱讀與臨床觀察記錄，積極參與吞嚥障礙相關研究與個案討論。</p>
+        </section>
+
+        <section>
+            <h2>教育背景</h2>
+            <ul>
+                <li>亞洲大學 聽語暨語言治療學系 學士班三年級 (113學年度，學號113018081)</li>
+                <li>語言治療相關課程：口腔功能評估、吞嚥障礙治療、DIR/Floortime 方法、肺功能檢測</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>實習經驗</h2>
+            <ul>
+                <li>語言治療實習生，台中醫療機構 (2025-至今)：協助成人吞嚥障礙評估、口腔運動檢查、台語衛教執行</li>
+                <li>臨床研究助理：參與吞嚥數據收集、MFR/VC數值分析、文獻回顧整理（Zhuang et al., 2009）</li>
+                <li>衛教內容開發：製作台語口腔運動衛教講稿、語音分析案例學習（CAPE-V量表）</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>專業技能</h2>
+            <ul>
+                <li>吞嚥障礙基礎：口腔周邊功能觀察、肺活量測試（VC/FVC）數據判讀</li>
+                <li>語言溝通：成人語言評估輔助、台語衛教溝通、語音特徵分析</li>
+                <li>研究方法：文獻綜述（APA 7）、數據整理、FEDC/DIR框架理解</li>
+                <li>軟體工具：醫療軟體操作、AI輔助內容生成、學術圖表製作</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>課外活動與興趣</h2>
+            <ul>
+                <li>研究專題：吞嚥治療正常數據基準（MFR 0.13±0.07 L/s）、VC預測方程式</li>
+                <li>社團參與：聽語系學術研討會志工、台語衛教推廣</li>
+                <li>自學證明：語言治療師執照考試準備中、肺功能檢測操作認證</li>
+            </ul>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <button onclick="togglePrint()">列印模式</button>
+            <button onclick="window.print()">列印履歷</button>
+        </div>
+    </div>
+
+    <script>
+        function togglePrint() {
+            const resume = document.getElementById('resume');
+            resume.classList.toggle('print-mode');
+        }
+    </script>
+</body>
+</html>
