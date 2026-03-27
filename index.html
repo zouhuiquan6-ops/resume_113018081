@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鄒蕙全 - 履歷</title>
+    <title>鄒蕙全 - 專業履歷</title>
     <style>
         body {
             font-family: 'Microsoft JhengHei', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e9eadd; 
+            background-color: #e9eadd;
             color: #333;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -20,10 +19,8 @@
             display: flex;
             flex-direction: row-reverse; 
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            min-height: 1000px;
+            min-height: 1000px; 
         }
-
-        /* 右側綠色側邊欄 */
         .sidebar {
             flex: 1;
             background-color: #8da47e; 
@@ -41,31 +38,97 @@
             margin-bottom: 20px;
         }
 
-        /* 左側內容區 */
+        .sidebar h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+       
+        .sidebar-item {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 10px;
+        }
+
+        .sidebar-item-title {
+            background-color: white;
+            color: #8da47e;
+            padding: 5px 15px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-item-content {
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+      
         .main-content {
             flex: 1.8;
             padding: 40px;
             background-color: #fdfdf7;
         }
 
+       
         .section-title {
-            background-color: #c5d6a7;
+            background-color: #c5d6a7; 
             display: inline-block;
             padding: 5px 30px;
             color: white;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+           
             clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
         }
 
-        h2 { color: #5a7247; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        h3 { margin-bottom: 5px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 12px; position: relative; padding-left: 20px; }
-        li::before { content: "•"; color: #8da47e; position: absolute; left: 0; font-weight: bold; }
+        section {
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: #5a7247;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: #8da47e;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .date {
+            font-weight: bold;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
         
-        .date { font-weight: bold; color: #777; font-size: 0.9em; margin-bottom: 5px; }
-        .student-id { color: #8da47e; font-weight: bold; margin-bottom: 10px; }
+        .social-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .social-link:hover { color: white; }
 
         @media print {
             .no-print { display: none; }
@@ -79,34 +142,52 @@
 <div class="container" id="resume">
     <div class="sidebar">
         <img src="profile.png" alt="個人頭像">
-        <h1 style="font-size: 2.2em; margin-bottom: 10px;">鄒蕙全</h1>
-        <p style="letter-spacing: 2px; font-size: 1.1em; opacity: 0.9;">語言治療實習生</p>
+        <h1>鄒蕙全</h1>
+        <p style="letter-spacing: 2px;">語言治療實習生</p>
         
         <hr style="margin: 30px 0; border: 0.5px solid rgba(255,255,255,0.2);">
         
-        <h3 style="text-align: left; margin-left: 10px;">專業技能</h3>
-        <div style="text-align: left; margin-left: 10px; line-height: 2;">
-            <div>● 口腔運動評估</div>
-            <div>● 肺功能數據分析</div>
-            <div>● 台語衛教溝通</div>
-            <div>● 文獻回顧 (APA 7th)</div>
+        <div class="sidebar-item">
+            <div class="sidebar-item-title">深化專業技能</div>
+            <div class="sidebar-item-content">
+                <div>● 吞嚥障礙治療方針</div>
+                <div>● 口腔周邊功能評估</div>
+                <div>● 肺功能數據 VC/MFR 判讀</div>
+                <div>● CAPE-V 語音分析</div>
+                <div>● DIR/Floortime 兒童溝通觀察</div>
+                <div>● 文獻閱讀與整理</div>
+            </div>
         </div>
-        
-        <div style="margin-top: 60px; text-align: left; font-size: 0.95em; padding-left: 10px;">
+
+        <div class="sidebar-item">
+            <div class="sidebar-item-title">證照/認證</div>
+            <div class="sidebar-item-content">
+                <div>● ACLS (預計參加)</div>
+                <div>● BLS/CPR 認證</div>
+                <div>● 語言治療師執照準備中</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center; font-size: 0.9em;">
             <p>📧 zouhuiquan@email.com</p>
             <p>📱 0912-345-678</p>
             <p>📍 台中市，台灣</p>
+            <div style="margin-top: 20px;">
+                <a href="#" class="social-link">IG</a> / 
+                <a href="#" class="social-link">FB</a> / 
+                <a href="#" class="social-link">LinkedIn</a>
+            </div>
         </div>
     </div>
 
     <div class="main-content">
         <section>
             <div class="section-title">教育背景</div>
-            <div style="margin-bottom: 30px;">
+            <div>
                 <p class="date">2022 - 至今</p>
                 <h3>亞洲大學 聽力暨語言治療學系</h3>
-                <div class="student-id">學號：113018081</div>
-                <p>目前為三年級學生，專攻吞嚥障礙（Dysphagia）與口腔功能評估。在學期間表現優異，積極參與各項臨床模擬與研究計畫。</p>
+                <p>學號：113018081 / 學士班三年級</p>
+                <p>專注於吞嚥障礙學、成人語言障礙評估、兒童語言發展學。積極參與模擬臨床課程，對各項吞嚥評估工具 (FEES, VFSS) 基礎知識有深入理解。</p>
             </div>
         </section>
 
@@ -116,16 +197,16 @@
                 <p class="date">2025 - 至今</p>
                 <h3>臨床實習生 | 台中醫療機構</h3>
                 <ul>
-                    <li>協助成人吞嚥障礙篩檢與 MFR/VC 數值判讀。</li>
+                    <li>協助成人吞嚥篩檢，記錄口腔運動與吞嚥功能。</li>
                     <li>獨立製作多份台語版口腔運動衛教講稿，獲得臨床指導老師肯定。</li>
-                    <li>運用 DIR/Floortime 框架觀察兒童溝通互動特徵。</li>
+                    <li>運用 DIR/Floortime 框架觀察兒童溝通互動特徵，撰寫觀察報告。</li>
                 </ul>
             </div>
             
             <div style="margin-top: 30px;">
-                <p class="date">研究專案</p>
-                <h3>吞嚥數據基準值分析</h3>
-                <p>協助整理 Zhuang et al. (2009) 相關文獻，並針對 MFR (0.13±0.07 L/s) 正常範圍進行個案數據對照分析。</p>
+                <p class="date">研究助理 (Part-time)</p>
+                <h3>吞嚥障礙正常數據基準分析</h3>
+                <p>協助整理相關文獻，並針對 MFR 與 VC 預測值進行個案數據對照分析，訓練數據解讀與 APA 格式排版。</p>
             </div>
         </section>
     </div>
