@@ -6,162 +6,136 @@
     <title>鄒蕙全 - 履歷</title>
     <style>
         body {
-            font-family: 'Microsoft JhengHei', 'Arial', sans-serif;
+            font-family: 'Microsoft JhengHei', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #e9eadd; 
             color: #333;
-            line-height: 1.6;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        header {
-            text-align: center;
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: #007bff;
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .info {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        h2 {
-            color: #007bff;
-            border-left: 5px solid #007bff;
-            padding-left: 15px;
-            font-size: 1.5em;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        li:before {
-            content: "▶";
-            color: #007bff;
-            position: absolute;
-            left: 0;
-        }
-        .contact {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 1.1em;
+            flex-direction: row-reverse; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 1000px;
         }
-        button {
-            background: #007bff;
+
+        /* 右側綠色側邊欄 */
+        .sidebar {
+            flex: 1;
+            background-color: #8da47e; 
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background 0.3s;
+            padding: 40px 20px;
+            text-align: center;
         }
-        button:hover {
-            background: #0056b3;
+
+        .sidebar img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            margin-bottom: 20px;
         }
-        .print-mode {
-            background: white !important;
-            box-shadow: none;
-            padding: 20px;
+
+        /* 左側內容區 */
+        .main-content {
+            flex: 1.8;
+            padding: 40px;
+            background-color: #fdfdf7;
         }
+
+        .section-title {
+            background-color: #c5d6a7;
+            display: inline-block;
+            padding: 5px 30px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+        }
+
+        h2 { color: #5a7247; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        h3 { margin-bottom: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 12px; position: relative; padding-left: 20px; }
+        li::before { content: "•"; color: #8da47e; position: absolute; left: 0; font-weight: bold; }
+        
+        .date { font-weight: bold; color: #777; font-size: 0.9em; margin-bottom: 5px; }
+        .student-id { color: #8da47e; font-weight: bold; margin-bottom: 10px; }
+
         @media print {
-            body { background: white; }
-            .container { box-shadow: none; padding: 20px; }
-            button { display: none; }
-        }
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
-            .contact { flex-direction: column; align-items: center; }
+            .no-print { display: none; }
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; margin: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="container" id="resume">
-        <header>
-            <h1>鄒蕙全</h1>
-            <img src="profile.png" alt="頭像" width="250" style="border-radius: 50%; display: block; margin: 0 auto 20px;">
-            <p class="info">學號：113018081</p>
-            <p class="info">亞洲大學聽語系三年級</p>
-            <p class="info">語言治療實習生 / 吞嚥障礙研究助理</p>
-            <p class="info">台中市，台灣</p>
-            <div class="contact">
-                <span>📧 zouhuiquan@email.com</span>
-                <span>📱 0912-345-678</span>
-            </div>
-        </header>
 
-        <section>
-            <h2>專業概述</h2>
-            <p>亞洲大學聽語系三年級學生，對語言治療與吞嚥障礙（dysphagia）領域充滿熱情。具備口腔運動評估、肺功能測試（spirometry）基礎知識與實習經驗，擅長台語衛教講稿製作、文獻閱讀與臨床觀察記錄，積極參與吞嚥障礙相關研究與個案討論。</p>
-        </section>
-
-        <section>
-            <h2>教育背景</h2>
-            <ul>
-                <li>亞洲大學 聽語暨語言治療學系 學士班三年級 (113學年度，學號113018081)</li>
-                <li>語言治療相關課程：口腔功能評估、吞嚥障礙治療、DIR/Floortime 方法、肺功能檢測</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>實習經驗</h2>
-            <ul>
-                <li>語言治療實習生，台中醫療機構 (2025-至今)：協助成人吞嚥障礙評估、口腔運動檢查、台語衛教執行</li>
-                <li>臨床研究助理：參與吞嚥數據收集、MFR/VC數值分析、文獻回顧整理（Zhuang et al., 2009）</li>
-                <li>衛教內容開發：製作台語口腔運動衛教講稿、語音分析案例學習（CAPE-V量表）</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>專業技能</h2>
-            <ul>
-                <li>吞嚥障礙基礎：口腔周邊功能觀察、肺活量測試（VC/FVC）數據判讀</li>
-                <li>語言溝通：成人語言評估輔助、台語衛教溝通、語音特徵分析</li>
-                <li>研究方法：文獻綜述（APA 7）、數據整理、FEDC/DIR框架理解</li>
-                <li>軟體工具：醫療軟體操作、AI輔助內容生成、學術圖表製作</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>課外活動與興趣</h2>
-            <ul>
-                <li>研究專題：吞嚥治療正常數據基準（MFR 0.13±0.07 L/s）、VC預測方程式</li>
-                <li>社團參與：聽語系學術研討會志工、台語衛教推廣</li>
-                <li>自學證明：語言治療師執照考試準備中、肺功能檢測操作認證</li>
-            </ul>
-        </section>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <button onclick="togglePrint()">列印模式</button>
-            <button onclick="window.print()">列印履歷</button>
+<div class="container" id="resume">
+    <div class="sidebar">
+        <img src="profile.png" alt="個人頭像">
+        <h1 style="font-size: 2.2em; margin-bottom: 10px;">鄒蕙全</h1>
+        <p style="letter-spacing: 2px; font-size: 1.1em; opacity: 0.9;">語言治療實習生</p>
+        
+        <hr style="margin: 30px 0; border: 0.5px solid rgba(255,255,255,0.2);">
+        
+        <h3 style="text-align: left; margin-left: 10px;">專業技能</h3>
+        <div style="text-align: left; margin-left: 10px; line-height: 2;">
+            <div>● 口腔運動評估</div>
+            <div>● 肺功能數據分析</div>
+            <div>● 台語衛教溝通</div>
+            <div>● 文獻回顧 (APA 7th)</div>
+        </div>
+        
+        <div style="margin-top: 60px; text-align: left; font-size: 0.95em; padding-left: 10px;">
+            <p>📧 zouhuiquan@email.com</p>
+            <p>📱 0912-345-678</p>
+            <p>📍 台中市，台灣</p>
         </div>
     </div>
 
-    <script>
-        function togglePrint() {
-            const resume = document.getElementById('resume');
-            resume.classList.toggle('print-mode');
-        }
-    </script>
+    <div class="main-content">
+        <section>
+            <div class="section-title">教育背景</div>
+            <div style="margin-bottom: 30px;">
+                <p class="date">2022 - 至今</p>
+                <h3>亞洲大學 聽力暨語言治療學系</h3>
+                <div class="student-id">學號：113018081</div>
+                <p>目前為三年級學生，專攻吞嚥障礙（Dysphagia）與口腔功能評估。在學期間表現優異，積極參與各項臨床模擬與研究計畫。</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">實習與研究</div>
+            <div>
+                <p class="date">2025 - 至今</p>
+                <h3>臨床實習生 | 台中醫療機構</h3>
+                <ul>
+                    <li>協助成人吞嚥障礙篩檢與 MFR/VC 數值判讀。</li>
+                    <li>獨立製作多份台語版口腔運動衛教講稿，獲得臨床指導老師肯定。</li>
+                    <li>運用 DIR/Floortime 框架觀察兒童溝通互動特徵。</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <p class="date">研究專案</p>
+                <h3>吞嚥數據基準值分析</h3>
+                <p>協助整理 Zhuang et al. (2009) 相關文獻，並針對 MFR (0.13±0.07 L/s) 正常範圍進行個案數據對照分析。</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 30px;" class="no-print">
+    <button style="padding: 10px 25px; background: #8da47e; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;" onclick="window.print()">
+        🖨️ 列印/儲存為 PDF
+    </button>
+</div>
+
 </body>
 </html>
