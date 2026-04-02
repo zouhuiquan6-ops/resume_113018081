@@ -218,5 +218,22 @@
     </button>
 </div>
 
+    <audio id="bgm" autoplay loop playsinline>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById("bgm");
+  audio.volume = 0.3;
+
+  audio.play().catch(() => {
+    audio.muted = true;
+    audio.play();
+
+    setTimeout(() => {
+      audio.muted = false;
+    }, 100);
+  });
+</script>
 </body>
 </html>
