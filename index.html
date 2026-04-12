@@ -3,179 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鄒蕙全 - 專業履歷</title>
+    <title>鄒蕙全 - 專業履歷展示</title>
     <style>
+        :root {
+            --primary-green: #8da47e;
+            --light-green: #c5d6a7;
+            --accent-green: #5a7247;
+            --bg-color: #e9eadd;
+        }
+
         body {
-            font-family: 'Microsoft JhengHei', sans-serif;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #e9eadd;
+            padding: 40px 20px;
+            /* 動態漸層背景 */
+            background: linear-gradient(-45deg, #e9eadd, #dce2d5, #f5f5f0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #333;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            display: flex;
-            flex-direction: row-reverse; 
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            min-height: 1000px; 
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: row-reverse;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px); /* 毛玻璃特效 */
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* 右側側邊欄：漸層深化 */
         .sidebar {
             flex: 1;
-            background-color: #8da47e; 
+            background: linear-gradient(180deg, var(--primary-green) 0%, #6e825e 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 30px;
             text-align: center;
         }
 
         .sidebar img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.3);
+            border: 8px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
             object-fit: cover;
-            margin-bottom: 20px;
+        }
+
+        .sidebar img:hover {
+            transform: scale(1.05) rotate(5deg);
         }
 
         .sidebar h1 {
-            font-size: 2.2em;
-            margin-bottom: 5px;
-            color: white;
-        }
-
-       
-        .sidebar-item {
-            text-align: left;
-            margin: 20px 0;
-            padding-left: 10px;
+            font-size: 2.5em;
+            margin: 20px 0 10px;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .sidebar-item-title {
             background-color: white;
-            color: #8da47e;
-            padding: 5px 15px;
-            display: inline-block;
+            color: var(--primary-green);
+            padding: 6px 20px;
+            border-radius: 50px;
             font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .sidebar-item-content {
-            line-height: 1.8;
-            font-size: 0.95em;
-        }
-
-      
-        .main-content {
-            flex: 1.8;
-            padding: 40px;
-            background-color: #fdfdf7;
-        }
-
-       
-        .section-title {
-            background-color: #c5d6a7; 
             display: inline-block;
-            padding: 5px 30px;
-            color: white;
-            font-weight: bold;
-            margin-bottom: 25px;
-           
-            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        h3 {
-            color: #5a7247;
-            margin-top: 0;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
             margin-bottom: 15px;
-            position: relative;
-            padding-left: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        li::before {
-            content: "•";
-            color: #8da47e;
-            position: absolute;
-            left: 0;
+        /* 左側內容區 */
+        .main-content {
+            flex: 2;
+            padding: 60px;
+            background-color: rgba(253, 253, 247, 0.8);
+        }
+
+        .section-title {
+            background: var(--light-green);
+            color: white;
+            padding: 8px 35px;
             font-weight: bold;
+            margin-bottom: 30px;
+            clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+            box-shadow: 5px 5px 0px var(--primary-green);
         }
 
-        .date {
-            font-weight: bold;
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 5px;
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-green);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
 
-        
-        .social-link {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            margin: 0 5px;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(141, 164, 126, 0.2);
         }
-        .social-link:hover { color: white; }
 
-        @media print {
-            .no-print { display: none; }
-            body { padding: 0; background: white; }
-            .container { box-shadow: none; margin: 0; }
+        h3 { color: var(--accent-green); margin: 0 0 10px 0; }
+        .date { color: #999; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
+
+        /* 底部按鈕 */
+        .btn-print {
+            padding: 12px 30px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(141, 164, 126, 0.4);
         }
+
+        .btn-print:hover {
+            background: var(--accent-green);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+        }
+
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body>
 
 <div class="container" id="resume">
     <div class="sidebar">
-        <img src="profile.png" alt="個人頭像">
+        <img src="profile.png" alt="鄒蕙全頭像">
         <h1>鄒蕙全</h1>
-        <p style="letter-spacing: 2px;">語言治療實習生</p>
+        <p style="opacity: 0.9; font-size: 1.1em;">語言治療實習生</p>
         
-        <hr style="margin: 30px 0; border: 0.5px solid rgba(255,255,255,0.2);">
+        <hr style="margin: 30px 0; border: none; height: 1px; background: rgba(255,255,255,0.2);">
         
         <div class="sidebar-item">
-            <div class="sidebar-item-title">深化專業技能</div>
-            <div class="sidebar-item-content">
+            <div class="sidebar-item-title">專業聯繫</div>
+            <div style="text-align: left; font-size: 0.9em; line-height: 2;">
+                <div>🆔 學號：113018081</div>
+                <div>📧 zouhuiquan@email.com</div>
+                <div>📍 台中市，台灣</div>
+            </div>
+        </div>
+
+        <div class="sidebar-item">
+            <div class="sidebar-item-title">專業核心能力</div>
+            <div style="text-align: left; font-size: 0.9em; line-height: 1.8;">
                 <div>● 吞嚥障礙治療方針</div>
                 <div>● 口腔周邊功能評估</div>
                 <div>● 肺功能數據 VC/MFR 判讀</div>
                 <div>● CAPE-V 語音分析</div>
                 <div>● DIR/Floortime 兒童溝通觀察</div>
-                <div>● 文獻閱讀與整理</div>
-            </div>
-        </div>
-
-        <div class="sidebar-item">
-            <div class="sidebar-item-title">證照/認證</div>
-            <div class="sidebar-item-content">
-                <div>● ACLS (預計參加)</div>
-                <div>● BLS/CPR 認證</div>
-                <div>● 語言治療師執照準備中</div>
-            </div>
-        </div>
-
-        <div style="margin-top: 50px; text-align: center; font-size: 0.9em;">
-            <p>📧 zouhuiquan@email.com</p>
-            <p>📱 0912-345-678</p>
-            <p>📍 台中市，台灣</p>
-            <div style="margin-top: 20px;">
-                <a href="#" class="social-link">IG</a> / 
-                <a href="#" class="social-link">FB</a> / 
-                <a href="#" class="social-link">LinkedIn</a>
             </div>
         </div>
     </div>
@@ -183,57 +177,47 @@
     <div class="main-content">
         <section>
             <div class="section-title">教育背景</div>
-            <div>
-                <p class="date">2022 - 至今</p>
+            <div class="card">
+                <span class="date">2022 - PRESENT</span>
                 <h3>亞洲大學 聽力暨語言治療學系</h3>
-                <p>學號：113018081 / 學士班三年級</p>
-                <p>專注於吞嚥障礙學、成人語言障礙評估、兒童語言發展學。積極參與模擬臨床課程，對各項吞嚥評估工具 (FEES, VFSS) 基礎知識有深入理解。</p>
+                <p>三年級學生 (學號 113018081)</p>
+                <p>專注於吞嚥障礙學與臨床評估，積極參與各項臨床模擬課程，對聽語專業領域充滿熱情。</p>
             </div>
         </section>
 
         <section>
-            <div class="section-title">實習與研究</div>
-            <div>
-                <p class="date">2025 - 至今</p>
+            <div class="section-title">實習與臨床</div>
+            <div class="card">
+                <span class="date">2025 - PRESENT</span>
                 <h3>臨床實習生 | 台中醫療機構</h3>
-                <ul>
-                    <li>協助成人吞嚥篩檢，記錄口腔運動與吞嚥功能。</li>
-                    <li>獨立製作多份台語版口腔運動衛教講稿，獲得臨床指導老師肯定。</li>
-                    <li>運用 DIR/Floortime 框架觀察兒童溝通互動特徵，撰寫觀察報告。</li>
-                </ul>
+                <p>協助執行成人吞嚥篩檢，精進口腔運動評估技術，並獨立設計多版台語衛教方案，成功提升醫病溝通效能。</p>
             </div>
-            
-            <div style="margin-top: 30px;">
-                <p class="date">研究助理 (Part-time)</p>
-                <h3>吞嚥障礙正常數據基準分析</h3>
-                <p>協助整理相關文獻，並針對 MFR 與 VC 預測值進行個案數據對照分析，訓練數據解讀與 APA 格式排版。</p>
+            <div class="card">
+                <span class="date">RESEARCH PROJECT</span>
+                <h3>吞嚥數據基準值分析</h3>
+                <p>協助整理 MFR (0.13±0.07 L/s) 相關數據對照，提升臨床量化分析與學術寫作能力。</p>
             </div>
         </section>
     </div>
 </div>
 
-<div style="text-align: center; margin-top: 30px;" class="no-print">
-    <button style="padding: 10px 25px; background: #8da47e; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;" onclick="window.print()">
-        🖨️ 列印/儲存為 PDF
-    </button>
+<div style="text-align: center; margin-top: 40px;" class="no-print">
+    <button class="btn-print" onclick="window.print()">🖨️ 生成 PDF 履歷</button>
 </div>
 
-    <audio id="bgm" autoplay loop playsinline>
-  <source src="music.mp3" type="audio/mpeg">
+<audio id="bgm" autoplay loop playsinline>
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  const audio = document.getElementById("bgm");
-  audio.volume = 0.3;
-
-  audio.play().catch(() => {
-    audio.muted = true;
-    audio.play();
-
-    setTimeout(() => {
-      audio.muted = false;
-    }, 100);
-  });
+    const audio = document.getElementById("bgm");
+    audio.volume = 0.3;
+    audio.play().catch(() => {
+        audio.muted = true;
+        audio.play();
+        setTimeout(() => { audio.muted = false; }, 100);
+    });
 </script>
+
 </body>
 </html>
