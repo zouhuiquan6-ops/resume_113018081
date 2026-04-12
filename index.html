@@ -1,222 +1,131 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鄒蕙全 - 專業履歷展示</title>
-    <style>
-        :root {
-            --primary-green: #8da47e;
-            --light-green: #c5d6a7;
-            --accent-green: #5a7247;
-            --bg-color: #e9eadd;
-        }
+<title>鄒蕙全 - 專業履歷 (W3.CSS Premium Edition)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", "Microsoft JhengHei", sans-serif}
+  .w3-olive { background-color: #8da47e !important; color: white !important; }
+  .w3-light-olive { background-color: #c5d6a7 !important; color: #333 !important; }
+  .profile-img { border: 5px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: 0.3s; }
+  .profile-img:hover { transform: translateY(-5px); }
+  .skill-tag { margin-bottom: 5px; display: inline-block; }
+  @media print { .no-print { display: none; } }
+</style>
 
-        body {
-            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            /* 動態漸層背景 */
-            background: linear-gradient(-45deg, #e9eadd, #dce2d5, #f5f5f0);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #333;
-        }
+<body class="w3-light-grey">
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            flex-direction: row-reverse;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            backdrop-filter: blur(10px); /* 毛玻璃特效 */
-            border: 1px solid rgba(255,255,255,0.5);
-        }
-
-        /* 右側側邊欄：漸層深化 */
-        .sidebar {
-            flex: 1;
-            background: linear-gradient(180deg, var(--primary-green) 0%, #6e825e 100%);
-            color: white;
-            padding: 50px 30px;
-            text-align: center;
-        }
-
-        .sidebar img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 8px solid rgba(255,255,255,0.2);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-            object-fit: cover;
-        }
-
-        .sidebar img:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
-
-        .sidebar h1 {
-            font-size: 2.5em;
-            margin: 20px 0 10px;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .sidebar-item-title {
-            background-color: white;
-            color: var(--primary-green);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* 左側內容區 */
-        .main-content {
-            flex: 2;
-            padding: 60px;
-            background-color: rgba(253, 253, 247, 0.8);
-        }
-
-        .section-title {
-            background: var(--light-green);
-            color: white;
-            padding: 8px 35px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
-            box-shadow: 5px 5px 0px var(--primary-green);
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary-green);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(141, 164, 126, 0.2);
-        }
-
-        h3 { color: var(--accent-green); margin: 0 0 10px 0; }
-        .date { color: #999; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
-
-        /* 底部按鈕 */
-        .btn-print {
-            padding: 12px 30px;
-            background: var(--primary-green);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(141, 164, 126, 0.4);
-        }
-
-        .btn-print:hover {
-            background: var(--accent-green);
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .container { flex-direction: column; }
-        }
-
-        @media print { .no-print { display: none; } }
-    </style>
-</head>
-<body>
-
-<div class="container" id="resume">
-    <div class="sidebar">
-        <img src="證件照.JPG" alt="鄒蕙全頭像">
-        <h1>鄒蕙全</h1>
-        <p style="opacity: 0.9; font-size: 1.1em;">語言治療實習生</p>
-        
-        <hr style="margin: 30px 0; border: none; height: 1px; background: rgba(255,255,255,0.2);">
-        
-        <div class="sidebar-item">
-            <div class="sidebar-item-title">專業聯繫</div>
-            <div style="text-align: left; font-size: 0.9em; line-height: 2;">
-                <div>🆔 學號：113018081</div>
-                <div>📧 zouhuiquan@email.com</div>
-                <div>📍 台中市，台灣</div>
-            </div>
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <div class="w3-row-padding">
+  
+    <div class="w3-third">
+      <div class="w3-white w3-text-grey w3-card-4 w3-round-large">
+        <div class="w3-display-container">
+          <img src="證件照.JPG" class="profile-img w3-round-large" style="width:100%" alt="鄒蕙全">
+          <div class="w3-display-bottomleft w3-container w3-text-white w3-olive w3-round" style="margin: 15px; padding: 10px 20px;">
+            <h2 style="margin:0; letter-spacing: 2px;">鄒蕙全</h2>
+          </div>
         </div>
+        <div class="w3-container w3-padding-24">
+          <p><i class="fa fa-id-card fa-fw w3-margin-right w3-large w3-text-olive"></i>學號：113018081</p>
+          <p><i class="fa fa-stethoscope fa-fw w3-margin-right w3-large w3-text-olive"></i>語言治療實習生 / 研究助理</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-olive"></i>zouhuiquan@email.com</p>
+          <hr>
 
-        <div class="sidebar-item">
-            <div class="sidebar-item-title">專業核心能力</div>
-            <div style="text-align: left; font-size: 0.9em; line-height: 1.8;">
-                <div>● 吞嚥障礙治療方針</div>
-                <div>● 口腔周邊功能評估</div>
-                <div>● 肺功能數據 VC/MFR 判讀</div>
-                <div>● CAPE-V 語音分析</div>
-                <div>● DIR/Floortime 兒童溝通觀察</div>
-            </div>
+          <p class="w3-large"><b><i class="fa fa-cogs fa-fw w3-margin-right w3-text-olive"></i>臨床核心能力</b></p>
+          <p>口腔運動與吞嚥評估 (OMSE/MBSImP)</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-olive" style="width:90%">90%</div>
+          </div>
+          <p>聲學嗓音分析 (CAPE-V / MDVP)</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-olive" style="width:82%">82%</div>
+          </div>
+          <p>成人失語症測驗輔助 (WAB-R / BDAE)</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-olive" style="width:78%">78%</div>
+          </div>
+          <br>
+
+          <p class="w3-large"><b><i class="fa fa-language fa-fw w3-margin-right w3-text-olive"></i>語言與軟體</b></p>
+          <p>台語醫病溝通 (衛教等級)</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-light-olive" style="width:95%">95%</div>
+          </div>
+          <p>醫療數據整理 (Excel / SPSS)</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-light-olive" style="width:70%">70%</div>
+          </div>
         </div>
+      </div><br>
     </div>
 
-    <div class="main-content">
-        <section>
-            <div class="section-title">教育背景</div>
-            <div class="card">
-                <span class="date">2022 - PRESENT</span>
-                <h3>亞洲大學 聽力暨語言治療學系</h3>
-                <p>三年級學生 (學號 113018081)</p>
-                <p>專注於吞嚥障礙學與臨床評估，積極參與各項臨床模擬課程，對聽語專業領域充滿熱情。</p>
-            </div>
-        </section>
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom w3-round-large">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-olive"></i>專業概述</h2>
+        <div class="w3-container w3-padding-bottom">
+          <p>目前為亞洲大學聽語系三年級學生，致力於學術研究與臨床實踐的結合。具備紮實的解剖生理學與聲學分析基礎，特別關注<b>吞嚥障礙 (Dysphagia)</b> 與<b>成人神經性溝通障礙</b>。實習期間展現優異的台語衛教能力，能將複雜的復健策略轉化為直觀的居家練習建議。</p>
+        </div>
+      </div>
 
-        <section>
-            <div class="section-title">實習與臨床</div>
-            <div class="card">
-                <span class="date">2025 - PRESENT</span>
-                <h3>臨床實習生 | 台中醫療機構</h3>
-                <p>協助執行成人吞嚥篩檢，精進口腔運動評估技術，並獨立設計多版台語衛教方案，成功提升醫病溝通效能。</p>
-            </div>
-            <div class="card">
-                <span class="date">RESEARCH PROJECT</span>
-                <h3>吞嚥數據基準值分析</h3>
-                <p>協助整理 MFR (0.13±0.07 L/s) 相關數據對照，提升臨床量化分析與學術寫作能力。</p>
-            </div>
-        </section>
+      <div class="w3-container w3-card w3-white w3-margin-bottom w3-round-large w3-hover-shadow">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-olive"></i>臨床與實習經歷</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>語言治療實習生 | 台中醫療機構</b></h5>
+          <h6 class="w3-text-olive"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2025 - <span class="w3-tag w3-olive w3-round">至今</span></h6>
+          <ul>
+            <li>協助臨床老師進行 MBSImP 標準化吞嚥功能評估，精準記錄個案之食物殘留與滲入情形。</li>
+            <li>獨立完成客製化台語居家復健講稿，包含喉頭上提運動、孟德爾頌手法說明。</li>
+            <li>觀察與協助兒科 DIR/Floortime 治療，學習如何從自然互動中分析兒童溝通意圖。</li>
+          </ul>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>研究助理 | 吞嚥聲學基準研究</b></h5>
+          <h6 class="w3-text-olive"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2025 - 至今</h6>
+          <p>負責整理 Zhuang et al. (2009) 正常成人肺功能數據對照，協助進行 MFR (Mean Flow Rate) 與氣流容積曲線 (Volume-Loop) 之數據錄入與分析，精進臨床量化研究能力。</p><br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-round-large w3-hover-shadow">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-olive"></i>教育背景與證照</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>亞洲大學 聽力暨語言治療學系</b></h5>
+          <h6 class="w3-text-olive"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2022 - 2026 (畢業預計)</h6>
+          <p>學術重點：成人吞嚥學、語暢障礙、聲學分析、語言發展心理學。成績優異，積極參與學術研討會志工。</p>
+          <div class="w3-padding-16">
+            <span class="w3-tag w3-light-olive w3-round skill-tag">ACLS 預計認證</span>
+            <span class="w3-tag w3-light-olive w3-round skill-tag">MBS 預計認證</span>
+          </div>
+          <hr>
+        </div>
+      </div>
+
+      <div class="w3-container w3-center w3-padding-32 no-print">
+        <button class="w3-button w3-olive w3-round-xxlarge w3-large w3-hover-shadow" onclick="window.print()">
+          <i class="fa fa-print w3-margin-right"></i>列印 / 輸出專業 PDF
+        </button>
+      </div>
+
     </div>
-</div>
-
-<div style="text-align: center; margin-top: 40px;" class="no-print">
-    <button class="btn-print" onclick="window.print()">🖨️ 生成 PDF 履歷</button>
+  </div>
 </div>
 
 <audio id="bgm" autoplay loop playsinline>
-    <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-    const audio = document.getElementById("bgm");
-    audio.volume = 0.3;
-    audio.play().catch(() => {
-        audio.muted = true;
-        audio.play();
-        setTimeout(() => { audio.muted = false; }, 100);
-    });
+  const audio = document.getElementById("bgm");
+  audio.volume = 0.25; 
+  // 點擊頁面任何地方開始播放
+  document.addEventListener('click', function() {
+    audio.play();
+  }, { once: true });
 </script>
 
 </body>
